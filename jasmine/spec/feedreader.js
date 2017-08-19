@@ -101,10 +101,10 @@ $(function () {
         var nextFeed;
 
         beforeEach(function (done) {
-            loadFeed(0, function () {
-                prevFeed = $('.feed').html();
-                loadFeed(1, function () {
-                    nextFeed = $('.feed').html();
+            loadFeed(0, function () { // calling the loadFeed function first (index 0)
+                prevFeed = $('.feed').html(); // set the prevFeed with the current HTML content
+                loadFeed(1, function () { // calling the loadFeed function second but now with new feeds (index 1)
+                    nextFeed = $('.feed').html(); // set the nextFeed with the updated HTML content
                     done();
                 });
             });
